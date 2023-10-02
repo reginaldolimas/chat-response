@@ -1,0 +1,9 @@
+.container__conversation__panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__conversation__panel {
+    margin-left: 10px;
+}

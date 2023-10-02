@@ -1,0 +1,14 @@
+.container_chat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.chat {
+   /*  background-color: red; */
+   border: 1px solid #4096FF;
+    width: 600px;
+    height: 400px;
+
+}
