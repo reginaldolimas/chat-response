@@ -33,15 +33,11 @@ function App() {
         frequency_penalty: 0,
         presence_penalty: 0,
       });
-      setResponseText(response.choices[0].message.content)
+      setResponseText(response.choices[0].message.content);
     } catch (error) {
       console.error('Erro ao chamar a API do OpenAi', error);
     }
   }
-
-/*   useEffect(() => {
-    const teste = handleSendMessageApi('oi tudo bom contigo?');
-  }, []); */
 
   const handleSendMessage = (message) => {
     setUserMessage(message);

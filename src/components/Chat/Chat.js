@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Chat.css';
 
-
-
-
 const Chat = ({ userMessage, chatMessage, sender }) => {
 
     const [messageHistory, setMessageHistory] = useState([]);
@@ -23,8 +20,6 @@ const Chat = ({ userMessage, chatMessage, sender }) => {
             addMessageToHistory(chatMessage, 'chatGpt');
         }
     }, [chatMessage]);
-
-
 
     return (
         <div className='container_chat'>
