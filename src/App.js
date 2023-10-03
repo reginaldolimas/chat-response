@@ -9,6 +9,7 @@ import OpenAI from "openai";
 function App() {
   const [userMessage, setUserMessage] = useState('');
   const [responseText, setResponseText] = useState('');
+
   const handleSendMessageApi = async (input) => {
     try {    
       const openai = new OpenAI({
@@ -33,25 +34,20 @@ function App() {
         frequency_penalty: 0,
         presence_penalty: 0,
       });
-      setResponseText(response.data.choices[0].message.content)
-
+      setResponseText(response.choices[0].message.content)
     } catch (error) {
       console.error('Erro ao chamar a API do OpenAi', error);
     }
   }
 
-  useEffect(() => {
-    const teste = handleSendMessageApi('Olá tudo bem?');
-    console.log('oioioioioiteste', teste);
-  }, []);
+/*   useEffect(() => {
+    const teste = handleSendMessageApi('oi tudo bom contigo?');
+  }, []); */
 
   const handleSendMessage = (message) => {
     setUserMessage(message);
   };
 
-  const BASE_URL = process.env.REACT_APP_OPENAI_API_KEY;
-
-  console.log('KEY: ', BASE_URL);
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>Chat Response</h1>
