@@ -10,13 +10,11 @@ function App() {
   const [userMessage, setUserMessage] = useState('');
   const [responseText, setResponseText] = useState('');
   const handleSendMessageApi = async (input) => {
-    try {
-
-      const apiKey = "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";
-
+    try {    
       const openai = new OpenAI({
-        apiKey: apiKey, dangerouslyAllowBrowser: true,
+        apiKey: process.env.REACT_APP_OPENAI_API_KEY, dangerouslyAllowBrowser: true,
       });
+
       const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [
@@ -42,7 +40,7 @@ function App() {
     }
   }
 
-  useEffect (() => {
+  useEffect(() => {
     const teste = handleSendMessageApi('Olá tudo bem?');
     console.log('oioioioioiteste', teste);
   }, []);
@@ -51,6 +49,9 @@ function App() {
     setUserMessage(message);
   };
 
+  const BASE_URL = process.env.REACT_APP_OPENAI_API_KEY;
+
+  console.log('KEY: ', BASE_URL);
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>Chat Response</h1>
