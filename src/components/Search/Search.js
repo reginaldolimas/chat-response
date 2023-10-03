@@ -15,7 +15,6 @@ export const Search = ({ onSendMessage, onMessageApi }) => {
     const handleSendButtonClick = () => {
         onSendMessage(input); // Chama a função do componente pai para enviar a mensagem
         onMessageApi(input);
-        console.log('testeeeee',onMessageApi(input));
         setInput(''); // Limpa o campo de entrada após enviar
     }
 
