@@ -1,8 +1,7 @@
 import { Search } from './components/Search/Search';
 import Chat from './components/Chat/Chat';
 import './App.css'
-import { useEffect, useState } from 'react';
-// This code is for v4 of the openai package: npmjs.com/package/openai
+import { useState } from 'react';
 import OpenAI from "openai";
 
 
