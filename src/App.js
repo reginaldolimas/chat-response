@@ -3,14 +3,20 @@ import Chat from './components/Chat/Chat';
 import './App.css'
 import { useState } from 'react';
 import OpenAI from "openai";
+import avatar from './img/robot02_90810.png';
+import user from './img/user.png';
+import { MessageHeader } from './components/MessageHeader/MessageHeader';
+import { ChatPage } from './components/ChatPage/ChatPage';
+import { MessageBottom } from './components/MessageBottom/MessageBottom';
 
 
 function App() {
   const [userMessage, setUserMessage] = useState('');
   const [responseText, setResponseText] = useState('');
+  const [input, setInput] = useState('');
 
   const handleSendMessageApi = async (input) => {
-    try {    
+    try {
       const openai = new OpenAI({
         apiKey: process.env.REACT_APP_OPENAI_API_KEY, dangerouslyAllowBrowser: true,
       });
@@ -43,13 +49,21 @@ function App() {
     setUserMessage(message);
   };
 
+  const handleChange = (e) => {
+    setInput(e.target.value);
+    console.log(input)
+}
+
   return (
     <>
-      <h1 style={{ textAlign: 'center' }}>Chat Response</h1>
+      {/*      <h1 style={{ textAlign: 'center' }}>Chat Response</h1>
       <Chat userMessage={userMessage} chatMessage={responseText} sender='Reginaldo' />
       <div className='container__conversation__panel'>
         <Search onSendMessage={handleSendMessage} onMessageApi={handleSendMessageApi} />
-      </div>
+      </div> */}
+      {/* Main container */}
+      <MessageHeader />
+      <ChatPage />
     </>
   );
 }
