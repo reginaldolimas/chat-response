@@ -12,7 +12,6 @@ export const MessageBottom = ({ onSendMessage, onSendMessageApi }) => {
     const handleClick = () => {
         onSendMessage(input);
         onSendMessageApi(input);
-        console.log('clicou input', input);
     }
 
     return (

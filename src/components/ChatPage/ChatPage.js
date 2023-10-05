@@ -11,9 +11,9 @@ export const ChatPage = (props) => {
                 <div class="chats">
                     <div class="msg-page">
                         {/*  <!-- Incoming messages --> */}
-                        <MessageReceived userMessage={props.userMessage} />
+                        <MessageReceived messageHistory={props.messageHistory} />
                         {/* <!-- Outgoing messages --> */}
-                        <MessageSend />
+                        <MessageSend messageHistory={props.messageHistory} />
                     </div>
                 </div>
                 <MessageBottom onSendMessage={props.onSendMessage} onSendMessageApi={props.onSendMessageApi} />

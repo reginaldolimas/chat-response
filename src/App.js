@@ -2,29 +2,33 @@ import './App.css'
 import { useEffect, useState } from 'react';
 import { MessageHeader } from './components/MessageHeader/MessageHeader';
 import { ChatPage } from './components/ChatPage/ChatPage';
+import { fetchResponse } from './api/openai';
 
 function App() {
-  const [userMessage, setUserMessage] = useState([]);
+  /*   const [userMessage, setUserMessage] = useState([]); */
   const [messageHistory, setMessageHistory] = useState([]);
 
-  const addMessageToHistory = (message) => {
-    setMessageHistory([...messageHistory, { message }])
+  const addMessageToHistory = (userMessage, gptMessage) => {
+    setMessageHistory([...messageHistory, { userMessage, gptMessage }]);
   }
 
-  useEffect(() => {
-    if (userMessage) {
-      addMessageToHistory(userMessage);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userMessage]);
+  /*   useEffect(() => {
+      if (userMessage) {
+        addMessageToHistory(userMessage)
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [userMessage]); */
+
 
 
   const handleSendMessage = (message) => {
-    setUserMessage(message);
+    addMessageToHistory('', message);
+    /*  setUserMessage(message); */
   };
 
-  const handleSendMessageApi = () => {
-    console.log('teste');
+  const handleSendMessageApi = (input) => {
+    const responseGpt = fetchResponse(input);
+    addMessageToHistory('', responseGpt);
   }
 
   return (
@@ -36,7 +40,7 @@ function App() {
       </div> */}
       {/* Main container */}
       <MessageHeader />
-      <ChatPage userMessage={userMessage} onSendMessage={handleSendMessage} onSendMessageApi={handleSendMessageApi} />
+      <ChatPage messageHistory={messageHistory} onSendMessage={handleSendMessage} onSendMessageApi={handleSendMessageApi} />
     </>
   );
 }
