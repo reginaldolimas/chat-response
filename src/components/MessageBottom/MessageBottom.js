@@ -2,7 +2,7 @@ import './MessageBottom.css';
 
 export const MessageBottom = () => {
     return (
-        <div class="msg-bottom" style={{backgroundColor: 'red'}}>
+        <div class="msg-bottom">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Write message..." />
                 <div class="input-group-append ">

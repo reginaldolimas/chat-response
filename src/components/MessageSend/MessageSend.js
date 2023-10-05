@@ -1,8 +1,10 @@
+import robo from '../../img/robo.png';
+
 export const MessageSend = () => {
     return (
         <div class="outgoing-chats">
             <div class="outgoing-chats-img">
-                <img src="user1.png" />
+                <img alt='robo' src={robo} />
             </div>
             <div class="outgoing-msg">
                 <div class="outgoing-chats-msg">

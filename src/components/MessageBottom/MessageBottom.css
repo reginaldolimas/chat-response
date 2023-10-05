@@ -3,13 +3,20 @@
     border-top: 1px solid #ccc;
     position: relative;
     height: 11%;
-    background-color: red;
+    display: inline-block;
+    background-color: #efefef;
+    width: 100%;
+    height: 10%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
 }
 /* Styling the input field */
 .input-group {
     float: right;
     margin-top: 13px;
     margin-right: 20px;
+    margin-bottom: 10px;
     outline: none !important;
     border-radius: 20px;
     width: 61% !important;

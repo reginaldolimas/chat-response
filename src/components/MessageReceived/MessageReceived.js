@@ -1,8 +1,10 @@
+import user1 from '../../img/user.png';
+
 export const MessageReceived = () => {
     return (
         <div class="received-chats">
             <div class="received-chats-img">
-                <img src="user2.png" />
+                <img alt='user' src={user1} />
             </div>
             <div class="received-msg">
                 <div class="received-msg-inbox">
