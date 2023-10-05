@@ -16,7 +16,7 @@ export const ChatPage = (props) => {
                         <MessageSend />
                     </div>
                 </div>
-                <MessageBottom onSendMessage={props.onSendMessage} />
+                <MessageBottom onSendMessage={props.onSendMessage} onSendMessageApi={props.onSendMessageApi} />
             </div>
         </div>
     )

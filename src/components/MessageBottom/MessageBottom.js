@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './MessageBottom.css';
 
-export const MessageBottom = ({ onSendMessage }) => {
+export const MessageBottom = ({ onSendMessage, onSendMessageApi }) => {
     const [input, setInput] = useState('');
 
     const handleChange = (e) => {
@@ -11,6 +11,7 @@ export const MessageBottom = ({ onSendMessage }) => {
 
     const handleClick = () => {
         onSendMessage(input);
+        onSendMessageApi(input);
         console.log('clicou input', input);
     }
 
