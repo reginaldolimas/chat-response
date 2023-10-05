@@ -5,8 +5,6 @@ import { ChatPage } from './components/ChatPage/ChatPage';
 
 function App() {
   const [userMessage, setUserMessage] = useState([]);
-  const [responseText, setResponseText] = useState('');
-  const [input, setInput] = useState('');
   const [messageHistory, setMessageHistory] = useState([]);
 
   const addMessageToHistory = (message) => {
@@ -19,14 +17,6 @@ function App() {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userMessage]);
-
-/*   useEffect(() => {
-    if (chatMessage) {
-      addMessageToHistory(chatMessage);
-    }
-  // eslint-disable-next-line no-undef
-  }, [chatMessage]); */
-
 
 
   const handleSendMessage = (message) => {
