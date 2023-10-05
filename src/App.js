@@ -15,17 +15,12 @@ function App() {
     if (userMessage) {
       addMessageToHistory(userMessage);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userMessage]);
 
 
   const handleSendMessage = (message) => {
-    const newMsg = {
-      ...message,
-      message,
-    }
-    setUserMessage(newMsg);
-    console.log('user-message', message)
+    setUserMessage(message);
   };
 
   const handleSendMessageApi = () => {
