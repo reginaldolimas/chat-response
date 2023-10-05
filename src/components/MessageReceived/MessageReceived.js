@@ -1,6 +1,6 @@
 import user1 from '../../img/user.png';
 
-export const MessageReceived = () => {
+export const MessageReceived = ({ userMessage }) => {
     return (
         <div class="received-chats">
             <div class="received-chats-img">
@@ -9,11 +9,7 @@ export const MessageReceived = () => {
             <div class="received-msg">
                 <div class="received-msg-inbox">
                     <p>
-                        Hi !! This is message from Riya . Lorem ipsum, dolor sit
-                        amet consectetur adipisicing elit. Non quas nemo eum,
-                        earum sunt, nobis similique quisquam eveniet pariatur
-                        commodi modi voluptatibus iusto omnis harum illum iste
-                        distinctio expedita illo!
+                       {userMessage}
                     </p>
                     <span class="time">18:06 PM | July 24</span>
                 </div>

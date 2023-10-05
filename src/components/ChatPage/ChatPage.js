@@ -11,7 +11,7 @@ export const ChatPage = (props) => {
                 <div class="chats">
                     <div class="msg-page">
                         {/*  <!-- Incoming messages --> */}
-                        <MessageReceived />
+                        <MessageReceived userMessage={props.userMessage} />
                         {/* <!-- Outgoing messages --> */}
                         <MessageSend />
                     </div>
