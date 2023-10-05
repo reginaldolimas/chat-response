@@ -3,7 +3,7 @@ import { MessageReceived } from '../MessageReceived/MessageReceived';
 import { MessageSend } from '../MessageSend/MessageSend';
 import { MessageBottom } from '../MessageBottom/MessageBottom';
 
-export const ChatPage = () => {
+export const ChatPage = (props) => {
     return (
 
         <div class="chat-page">
@@ -16,7 +16,7 @@ export const ChatPage = () => {
                         <MessageSend />
                     </div>
                 </div>
-                <MessageBottom />
+                <MessageBottom onSendMessage={props.onSendMessage} />
             </div>
         </div>
     )

@@ -3,12 +3,8 @@ import Chat from './components/Chat/Chat';
 import './App.css'
 import { useState } from 'react';
 import OpenAI from "openai";
-import avatar from './img/robot02_90810.png';
-import user from './img/user.png';
 import { MessageHeader } from './components/MessageHeader/MessageHeader';
 import { ChatPage } from './components/ChatPage/ChatPage';
-import { MessageBottom } from './components/MessageBottom/MessageBottom';
-
 
 function App() {
   const [userMessage, setUserMessage] = useState('');
@@ -49,11 +45,6 @@ function App() {
     setUserMessage(message);
   };
 
-  const handleChange = (e) => {
-    setInput(e.target.value);
-    console.log(input)
-}
-
   return (
     <>
       {/*      <h1 style={{ textAlign: 'center' }}>Chat Response</h1>
@@ -63,7 +54,7 @@ function App() {
       </div> */}
       {/* Main container */}
       <MessageHeader />
-      <ChatPage />
+      <ChatPage onSendMessage={handleSendMessage} />
     </>
   );
 }
