@@ -9,7 +9,7 @@ export const MessageSend = ({ messageHistory }) => {
             <div class="outgoing-msg">
                 <div class="outgoing-chats-msg">
                     {messageHistory.length < 1 ? null : messageHistory.map((messageObj, index) => (
-                        <p key={index}>{messageObj.userMessage}</p>
+                        messageObj.gptMessage === '' ? null : <p key={index}>{messageObj.gptMessage}</p>
                     ))}
                     <span class="time">18:30 PM | July 24</span>
                 </div>

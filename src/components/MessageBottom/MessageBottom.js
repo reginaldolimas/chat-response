@@ -12,6 +12,7 @@ export const MessageBottom = ({ onSendMessage, onSendMessageApi }) => {
     const handleClick = () => {
         onSendMessage(input);
         onSendMessageApi(input);
+
     }
 
     return (

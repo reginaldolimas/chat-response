@@ -1,5 +1,5 @@
 import './App.css'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { MessageHeader } from './components/MessageHeader/MessageHeader';
 import { ChatPage } from './components/ChatPage/ChatPage';
 import { fetchResponse } from './api/openai';
@@ -12,25 +12,20 @@ function App() {
     setMessageHistory([...messageHistory, { userMessage, gptMessage }]);
   }
 
-  /*   useEffect(() => {
-      if (userMessage) {
-        addMessageToHistory(userMessage)
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [userMessage]); */
-
-
-
   const handleSendMessage = (message) => {
-    addMessageToHistory('', message);
+    addMessageToHistory(message, '');
     /*  setUserMessage(message); */
   };
 
-  const handleSendMessageApi = (input) => {
-    const responseGpt = fetchResponse(input);
-    addMessageToHistory('', responseGpt);
+  const handleSendMessageApi = async (input) => {
+    try {
+      const responseGpt = await fetchResponse(input);
+      console.log('aquiiiiii', responseGpt)
+      addMessageToHistory('', responseGpt);
+    } catch (error) {
+      console.error('Ocorreu um erro ao enviar a mensagem', error)
+    }
   }
-
   return (
     <>
       {/*      <h1 style={{ textAlign: 'center' }}>Chat Response</h1>
