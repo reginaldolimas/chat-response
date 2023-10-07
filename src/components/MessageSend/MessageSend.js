@@ -1,6 +1,6 @@
 import robo from '../../img/robo.png';
 
-export const MessageSend = ({ messageHistory }) => {
+export const MessageSend = ({ message }) => {
     return (
         <div class="outgoing-chats">
             <div class="outgoing-chats-img">
@@ -8,9 +8,7 @@ export const MessageSend = ({ messageHistory }) => {
             </div>
             <div class="outgoing-msg">
                 <div class="outgoing-chats-msg">
-                    {messageHistory.length < 1 ? null : messageHistory.map((messageObj, index) => (
-                        messageObj.gptMessage === '' ? null : <p key={index}>{messageObj.gptMessage}</p>
-                    ))}
+                    <p>{message}</p>
                     <span class="time">18:30 PM | July 24</span>
                 </div>
             </div>
