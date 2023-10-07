@@ -6,24 +6,31 @@ export const MessageBottom = ({ onSendMessage, onSendMessageApi }) => {
 
     const handleChange = (e) => {
         setInput(e.target.value);
-        console.log(input)
     }
 
-    const handleClick = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Evita a recarga da página ao pressionar Enter dentro do formulário
         onSendMessage(input);
         onSendMessageApi(input);
-
+        setInput(''); // Limpar o campo de entrada após o envio
     }
 
     return (
         <div class="msg-bottom">
-            <div class="input-group">
-                <input onChange={handleChange} type="text" class="form-control" placeholder="Write message..." />
-                <div class="input-group-append ">
-                    <span class="input-group-text send-icon " onClick={handleClick}><i class="bi bi-send "></i>
-                    </span>
+            <form onSubmit={handleSubmit}>
+                <div class="input-group">
+                    <input
+                        value={input}
+                        onChange={handleChange}
+                        type="text"
+                        class="form-control"
+                        placeholder="Write message..." />
+                    <div class="input-group-append ">
+                        <span class="input-group-text send-icon " ><i class="bi bi-send "></i>
+                        </span>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     )
 }
