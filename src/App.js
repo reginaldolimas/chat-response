@@ -8,7 +8,10 @@ function App() {
   const [messageHistory, setMessageHistory] = useState([]);
 
   const addMessageToHistory = (user, message) => {
-    setMessageHistory(prevHistory => prevHistory.concat({ user, message }));
+    const now = new Date(); // Obtém a data e hora atual
+    const formattedDate = now.toLocaleString(); // Formata a data e hora como uma string legível
+
+    setMessageHistory(prevHistory => prevHistory.concat({ user, message, timestamp: formattedDate }));
     /* setMessageHistory([...messageHistory, { user, message }]); */
   }
 

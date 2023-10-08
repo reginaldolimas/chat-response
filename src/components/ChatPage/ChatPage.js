@@ -8,13 +8,11 @@ export const ChatPage = (props) => {
 
     const renderedComponents = props.messageHistory.map((message, index) => {
         if (message.user === "user") {
-            // Renderizar Componente1 para mensagens do usuário
-            return <MessageReceived key={index} message={message.message} />;
+            return <MessageReceived key={index} message={message} />;
         } else if (message.user === "chatgpt") {
-            // Renderizar Componente2 para mensagens do ChatGPT
-            return <MessageSend key={index} message={message.message} />;
+            return <MessageSend key={index} message={message} />;
         }
-        return null; // Retornar null para mensagens desconhecidas (ou você pode fazer algo diferente)
+        return null;
     });
 
     useEffect(() => {
@@ -28,8 +26,6 @@ export const ChatPage = (props) => {
                 <div class="chats">
                     <div class="msg-page">
                         {renderedComponents}
-                        {/* <MessageReceived messageHistory={props.messageHistory} />
-                        <MessageSend messageHistory={props.messageHistory} /> */}
                     </div>
                 </div>
                 <MessageBottom onSendMessage={props.onSendMessage} onSendMessageApi={props.onSendMessageApi} />

@@ -8,10 +8,10 @@ export const MessageReceived = ({ message }) => {
             </div>
             <div class="received-msg">
                 <div class="received-msg-inbox">
-                  
-                        <p>{message}</p>
-                   
-                    <span class="time">18:06 PM | July 24</span>
+                    <p>{message.message}</p>
+
+
+                    <span class="time">{message.timestamp}</span>
                 </div>
             </div>
         </div>
