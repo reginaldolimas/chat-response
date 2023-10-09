@@ -1,6 +1,7 @@
 import robo from '../../img/robo.png';
 import './MessageSend.css';
 import { AiOutlineCopy } from 'react-icons/ai';
+import { LuCopyCheck } from 'react-icons/lu';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useState } from 'react';
 
@@ -16,7 +17,7 @@ export const MessageSend = ({ message }) => {
                 <div class="outgoing-chats-msg">
                     <p>{message.message}
                         <CopyToClipboard text={valueClipBoard.value} onCopy={()=>setValueClipBoard({copied: true})}>
-                            <span className='ToClipBoard'><AiOutlineCopy /></span>
+                            <span className='ToClipBoard'>{valueClipBoard.copied ? <LuCopyCheck /> : <AiOutlineCopy />}</span>
                         </CopyToClipboard>
                     </p>
                     <span class="time">{message.timestamp}</span>
