@@ -1,4 +1,5 @@
 import robo from '../../img/robo.png';
+import './MessageSend.css';
 import { AiOutlineCopy } from 'react-icons/ai';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useState } from 'react';

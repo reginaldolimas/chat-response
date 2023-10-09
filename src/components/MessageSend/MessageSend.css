@@ -1,6 +1,3 @@
-
-.copyToClipBoard {
-    background-color: red;
-    display: flex;
-    justify-content: flex-end;
+.ToClipBoard{
+    cursor: pointer;
 }
