@@ -12,12 +12,10 @@ function App() {
     const formattedDate = now.toLocaleString(); // Formata a data e hora como uma string legível
 
     setMessageHistory(prevHistory => prevHistory.concat({ user, message, timestamp: formattedDate }));
-    /* setMessageHistory([...messageHistory, { user, message }]); */
   }
 
   const handleSendMessage = (message) => {
     addMessageToHistory('user', message);
-    /*  setUserMessage(message); */
   };
 
   const handleSendMessageApi = async (input) => {

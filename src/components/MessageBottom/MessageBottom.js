@@ -12,7 +12,13 @@ export const MessageBottom = ({ onSendMessage, onSendMessageApi }) => {
         e.preventDefault(); // Evita a recarga da página ao pressionar Enter dentro do formulário
         onSendMessage(input);
         onSendMessageApi(input);
-        setInput(''); // Limpar o campo de entrada após o envio
+        setInput('');
+    }
+
+    const handleClick = () => {
+        onSendMessage(input);
+        onSendMessageApi(input);
+        setInput('');
     }
 
     return (
@@ -26,7 +32,7 @@ export const MessageBottom = ({ onSendMessage, onSendMessageApi }) => {
                         class="form-control"
                         placeholder="Write message..." />
                     <div class="input-group-append ">
-                        <span class="input-group-text send-icon " ><i class="bi bi-send "></i>
+                        <span class="input-group-text send-icon " ><i class="bi bi-send " onClick={handleClick}></i>
                         </span>
                     </div>
                 </div>
